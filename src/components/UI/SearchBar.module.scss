@@ -1,0 +1,26 @@
+.search-bar {
+  position: relative;
+
+  &__input {
+    width: 100%;
+    border: none;
+    outline: none;
+
+    &::-webkit-input-placeholder {
+      color: var(--color-primary-3);
+    }
+  }
+
+  &__input:focus:not(&__input[value='']) + &__icon,
+  &__input:hover:not(&__input[value='']) + &__icon {
+    display: none;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+}
