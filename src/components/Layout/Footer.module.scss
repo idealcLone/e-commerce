@@ -1,0 +1,25 @@
+.footer {
+  grid-column: 1 / -1;
+  padding: 0 4.5rem 6.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+
+  &__lists {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.tags {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+  }
+}

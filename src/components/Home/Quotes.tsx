@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import classes from './Quotes.module.scss';
 import { Quote } from './Quote';
+import { Button } from '../UI/Button';
 
 export const Quotes: React.FC = () => {
   const quotesRef = useRef<HTMLDivElement>(null);
@@ -10,7 +11,7 @@ export const Quotes: React.FC = () => {
     const quotes = Array.from(quotesRef.current?.children as HTMLCollectionOf<HTMLElement>);
     const quoteWidth = quotes[0].getBoundingClientRect().width;
     quotes.forEach((quote, index) => {
-      quote.style.left = `${quoteWidth * index}px`;
+      quote.style.left = `${(quoteWidth + 32) * index}px`;
     });
   }, []);
 
@@ -34,12 +35,14 @@ export const Quotes: React.FC = () => {
     handleMove(-1);
   };
 
+  const handleButtonClick = () => {};
+
   return (
     <div className={classes['quotes']}>
       {currentQuote > 0 && (
         <div className={classes['quotes__left']}>
           <img
-            src="../assets/icons/arrow-left.svg"
+            src="../assets/icons/./slider-arrow-left.svg"
             alt="Arrow left"
             className={classes['quotes__arrow-left']}
             onClick={handleLeftMove}
@@ -54,10 +57,10 @@ export const Quotes: React.FC = () => {
         <Quote />
         <Quote />
       </div>
-      {currentQuote < 2 && (
+      {currentQuote < 3 && (
         <div className={classes['quotes__right']}>
           <img
-            src="../assets/icons/arrow-right.svg"
+            src="../assets/icons/./slider-arrow-right.svg"
             alt="Arrow right"
             className={classes['quotes__arrow-right']}
             onClick={handleRightMove}

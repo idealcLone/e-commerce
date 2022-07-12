@@ -3,6 +3,10 @@
   outline: none;
   border-radius: 12px;
   background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
 
   &--stroked {
     border: 2px solid var(--color-green-3);
