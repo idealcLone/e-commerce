@@ -1,0 +1,15 @@
+.row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 3.2rem;
+  padding: 6.4rem 4.5rem;
+
+  & > * {
+    &:first-child {
+      grid-column: 1 / span 2;
+    }
+    &:last-child {
+      grid-column: 4 / -1;
+    }
+  }
+}

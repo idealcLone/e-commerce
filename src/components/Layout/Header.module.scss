@@ -9,7 +9,7 @@
   }
 
   &__upper {
-    padding: 1.6rem 0;
+    padding: 1.6rem 4.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,8 +28,7 @@
   }
 
   &__main {
-    padding-top: 4rem;
-    padding-bottom: 4.8rem;
+    padding: 4rem 4.5rem 4.8rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -115,10 +114,7 @@
 }
 
 .categories {
-  position: absolute;
-  left: 0;
   background-color: var(--color-primary-7);
-  width: 100vw;
   padding: 1.6rem 4.5rem;
 
   &__list {

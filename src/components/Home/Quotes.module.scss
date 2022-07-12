@@ -1,0 +1,39 @@
+.quotes {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3.2rem;
+  height: 22rem;
+  margin: 6.9rem 0 20rem;
+  overflow: hidden;
+
+  &__right,
+  &__left {
+    cursor: pointer;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 9rem;
+    background: linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+    opacity: .7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__left {
+    left: 0;
+    align-items: flex-start;
+  }
+
+  &__right {
+    right: 0;
+    align-items: flex-end;
+  }
+
+  &__list {
+    width: 100%;
+    transition: transform 250ms ease-in;
+  }
+}

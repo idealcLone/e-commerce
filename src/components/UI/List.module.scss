@@ -1,0 +1,21 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &__title {
+    margin-bottom: 1.6rem;
+  }
+
+  &__items {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  &__item {
+    color: var(--color-green-1);
+    text-decoration: underline;
+  }
+}

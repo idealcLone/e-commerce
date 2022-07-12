@@ -4,31 +4,10 @@ import classes from './Header.module.scss';
 import { Select } from '../UI/Select';
 import { SearchBar } from '../UI/SearchBar';
 import classNames from 'classnames';
-
-const options = [
-  'All categories',
-  'Bakery',
-  'Fruit and vegetables',
-  'Meat and fish',
-  'Drinks',
-  'Kitchen',
-  'Special nutrition',
-  'Baby',
-  'Pharmacy',
-];
-const categories = [
-  'Bakery',
-  'Fruit and vegetables',
-  'Meat and fish',
-  'Drinks',
-  'Kitchen',
-  'Special nutrition',
-  'Baby',
-  'Pharmacy',
-];
+import { categories } from '../../consts/lists';
 
 export const Header: React.FC = () => {
-  const [category, setCategory] = useState<string>(options[0]);
+  const [category, setCategory] = useState<string>('All categories');
   const [searchText, setSearchText] = useState<string>('');
 
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -77,7 +56,7 @@ export const Header: React.FC = () => {
         <div className={classes['search']}>
           <Select
             value={category}
-            options={options}
+            options={['All categories', ...categories]}
             name="category"
             onChange={handleSelectChange}
             className={classes['search__select']}
