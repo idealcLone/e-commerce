@@ -2,7 +2,6 @@
   grid-row: 1 / 2;
   grid-column: 1 / -1;
   width: 100%;
-  margin-bottom: 6.4rem;
 
   a {
     text-decoration: none;
@@ -37,6 +36,7 @@
 
   &__title {
     font-size: 1.8rem;
+    cursor: pointer;
   }
 
   &__actions {

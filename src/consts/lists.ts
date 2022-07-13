@@ -36,7 +36,6 @@ export const products = [
   'Meat',
   'Seo tag',
   'Fish',
-  'Seo tag',
   'Fresh food',
   'Lemons',
 ];

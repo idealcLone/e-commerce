@@ -5,10 +5,17 @@ import { Select } from '../UI/Select';
 import { SearchBar } from '../UI/SearchBar';
 import classNames from 'classnames';
 import { categories } from '../../consts/lists';
+import { Link, useNavigate } from 'react-router-dom';
 
 export const Header: React.FC = () => {
+  const navigate = useNavigate();
+
   const [category, setCategory] = useState<string>('All categories');
   const [searchText, setSearchText] = useState<string>('');
+
+  const handleTitleClick = () => {
+    navigate('/');
+  };
 
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const { value } = e.target;
@@ -18,6 +25,10 @@ export const Header: React.FC = () => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
     setSearchText(value);
+  };
+
+  const formatLinks = (link: string): string => {
+    return link.replaceAll(' ', '-').toLowerCase();
   };
 
   return (
@@ -52,7 +63,9 @@ export const Header: React.FC = () => {
         </nav>
       </div>
       <div className={classes['header__main']}>
-        <h1 className={classes['header__title']}>Freshnesecom</h1>
+        <h1 className={classes['header__title']} onClick={handleTitleClick}>
+          Freshnesecom
+        </h1>
         <div className={classes['search']}>
           <Select
             value={category}
@@ -92,7 +105,7 @@ export const Header: React.FC = () => {
         <ul className={classes['categories__list']}>
           {categories.map((ctg) => (
             <li key={ctg} className={classNames('u-headline-5', classes['categories__item'])}>
-              <span>{ctg}</span>
+              <Link to={`/category/${formatLinks(ctg)}`}>{ctg}</Link>
               <img src="../assets/icons/./arrow-down.svg" alt="Arrow down" />
             </li>
           ))}
